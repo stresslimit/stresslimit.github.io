@@ -8,7 +8,7 @@
         return {status: 2, msg: 'Ready'}
     }
 
-    ext.output = function(percent) {
+    ext.output = function(percent, cb) {
       console.log('sending', percent)
       var access_token = '8632cdf7594e430744477516d833f3aa0aa645c62477807c44d2f24edd9a2af5'
       $.ajax({
@@ -20,6 +20,7 @@
         percent: percent,
         success: function(res,status) {
           console.log('got back ', res, status)
+          cb()
         }
       })
     }
@@ -52,7 +53,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-          [' ', 'set cloudBit output to %n percent', 'output', 100],
+          ['w', 'set cloudBit output to %n percent', 'output', 100],
           ['r', '%n ^ %n', 'power', 2, 3],
           ['w', 'wait for random time', 'wait_random'],
           ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA']
