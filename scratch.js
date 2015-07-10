@@ -1,12 +1,24 @@
 (function(ext) {
     // Cleanup function when the extension is unloaded
-    ext._shutdown = function() {};
+    ext._shutdown = function() {}
 
     // Status reporting code
     // Use this to report missing hardware, plugin or unsupported browser
     ext._getStatus = function() {
-        return {status: 2, msg: 'Ready'};
-    };
+        return {status: 2, msg: 'Ready'}
+    }
+
+    ext.output = function(percent) {
+      var access_token = '8632cdf7594e430744477516d833f3aa0aa645c62477807c44d2f24edd9a2af5'
+      $.ajax({
+        url: 'https://api-http.littlebitscloud.cc/v3/scratch_test_device',
+        method: 'post',
+        headers: {
+          Authorization: 'Bearer ' + access_token
+        },
+        percent: percent
+      })
+    }
 
     ext.get_temp = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
@@ -15,33 +27,34 @@
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['temp'];
-                  callback(temperature);
+                  temperature = weather_data['main']['temp']
+                  callback(temperature)
               }
-        });
-    };
+        })
+    }
 
     ext.wait_random = function(callback) {
-        wait = Math.random();
-        console.log('Waiting for ' + wait + ' seconds');
+        wait = Math.random()
+        console.log('Waiting for ' + wait + ' seconds')
         window.setTimeout(function() {
-            callback();
-        }, wait*1000);
-    };
+            callback()
+        }, wait*1000)
+    }
 
     ext.power = function(base, exponent) {
-        return Math.pow(base, exponent);
-    };
+        return Math.pow(base, exponent)
+    }
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
+          [' ', 'set cloudBit output to %n percent', 'cloudBit Output', 100],
           ['r', '%n ^ %n', 'power', 2, 3],
           ['w', 'wait for random time', 'wait_random'],
           ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA']
         ]
-    };
+    }
 
     // Register the extension
-    ScratchExtensions.register('littleBits Test', descriptor, ext);
-})({});
+    ScratchExtensions.register('littleBits Test', descriptor, ext)
+})({})
