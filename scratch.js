@@ -28,7 +28,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-          ['w', 'set cloudBit output to %n percent, with access_token %s', 'output', 100, 'get your access_token from littleBits Cloud Control']
+          ['w', 'set cloudBit %s output to %n percent, with access_token %s', 'output', 'ID', 100, 'get your access_token from littleBits Cloud Control']
         ]
     }
 
