@@ -21,10 +21,24 @@
         });
     };
 
+    ext.wait_random = function(callback) {
+        wait = Math.random();
+        console.log('Waiting for ' + wait + ' seconds');
+        window.setTimeout(function() {
+            callback();
+        }, wait*1000);
+    };
+
+    ext.power = function(base, exponent) {
+        return Math.pow(base, exponent);
+    };
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA']
+          ['r', '%n ^ %n', 'power', 2, 3],
+          ['w', 'wait for random time', 'wait_random'],
+          ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA']
         ]
     };
 
