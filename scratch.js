@@ -12,7 +12,7 @@
       console.log('sending', percent)
       var access_token = '8632cdf7594e430744477516d833f3aa0aa645c62477807c44d2f24edd9a2af5'
       $.ajax({
-        url: 'https://api-http.littlebitscloud.cc/v3/scratch_test_device/output',
+        url: 'https://api-http.littlebitscloud.cc/v3/devices/scratch_test_device/output',
         method: 'post',
         headers: {
           Authorization: 'Bearer ' + access_token
@@ -20,7 +20,7 @@
         percent: percent,
         success: function(res,status) {
           console.log('got back ', res, status)
-          cb()
+          if ( res.success ) cb()
         }
       })
     }
