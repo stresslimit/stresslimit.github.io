@@ -52,7 +52,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-          [' ', 'set cloudBit output to %n percent', 'cloudBit Output', 100],
+          [' ', 'set cloudBit output to %n percent', 'output', 100],
           ['r', '%n ^ %n', 'power', 2, 3],
           ['w', 'wait for random time', 'wait_random'],
           ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA']
