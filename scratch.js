@@ -10,11 +10,12 @@ https://github.com/byjg/jquery-sse
     }
 
     ext.output = function(cloudBit, percent, access_token, cb) {
+      var a = access_token
       $.ajax({
         url: 'https://api-http.littlebitscloud.cc/v3/devices/'
               + cloudBit
               + '/output?access_token='
-              + access_token,
+              + a,
         method: 'post',
         percent: percent,
         success: function(res,status) {
@@ -28,10 +29,11 @@ https://github.com/byjg/jquery-sse
     }
 
     ext.input = function(cloudBit, access_token, cb) {
+      var a = access_token
       var sse = $.SSE('https://api-http.littlebitscloud.cc/v3/devices/'
                         + cloudBit
                         + '/input?access_token='
-                        + access_token,
+                        + a,
         {
           // onOpen: function(e){
         	// 	console.log("Open", e);
