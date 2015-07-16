@@ -28,10 +28,7 @@ https://github.com/byjg/jquery-sse
     }
 
     ext.input = function(cloudBit, access_token, cb) {
-      var sse = $.SSE('https://api-http.littlebitscloud.cc/v3/devices/'
-                        + 'scratch_test_device'
-                        + '/input?access_token='
-                        + '8632cdf7594e430744477516d833f3aa0aa645c62477807c44d2f24edd9a2af5',
+      var sse = $.SSE('https://api-http.littlebitscloud.cc/v3/devices/scratch_test_device/input?access_token=8632cdf7594e430744477516d833f3aa0aa645c62477807c44d2f24edd9a2af5',
         {
         	onError: function(e) {
         		console.log("Could not connect");
