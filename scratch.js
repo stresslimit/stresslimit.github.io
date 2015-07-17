@@ -33,12 +33,6 @@ https://github.com/byjg/jquery-sse
                         + '/input?access_token='
                         + access_token,
         {
-          // onOpen: function(e){
-        	// 	console.log("Open", e);
-        	// },
-        	// onEnd: function(e){
-        	// 	console.log("End", e);
-        	// },
         	onError: function(e) {
         		console.log("Could not connect");
         	},
@@ -55,7 +49,7 @@ https://github.com/byjg/jquery-sse
     var descriptor = {
         blocks: [
           ['w', 'set cloudBit %s output to %n percent, with access_token %s', 'output', 'ID', 100, 'get your access_token from littleBits Cloud Control'],
-          ['R', 'get cloudBit %s input value, with access_token %s', 'output', 'ID', 'get your access_token from littleBits Cloud Control']
+          ['R', 'get cloudBit %s input value, with access_token %s', 'input', 'ID', 'get your access_token from littleBits Cloud Control']
         ]
     }
 
