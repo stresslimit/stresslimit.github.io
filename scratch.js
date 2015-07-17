@@ -29,9 +29,9 @@ https://github.com/byjg/jquery-sse
 
     ext.input = function(cloudBit, access_token, cb) {
       var sse = $.SSE('https://api-http.littlebitscloud.cc/v3/devices/'
-            + cloudBit
-            + '/output?access_token='
-            + access_token,
+                        + cloudBit
+                        + '/output?access_token='
+                        + access_token,
         {
         	onError: function(e) {
         		console.log("Could not connect");
