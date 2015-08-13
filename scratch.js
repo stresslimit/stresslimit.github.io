@@ -20,6 +20,7 @@ https://github.com/byjg/jquery-sse
               + access_token,
         method: 'post',
         percent: percent,
+        duration_ms: duration_ms,
         success: function(res,status) {
           // console.log('got back ', res, status)
           if ( res.success ) cb()
