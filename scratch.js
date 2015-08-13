@@ -34,6 +34,7 @@ https://github.com/byjg/jquery-sse
     }
 
     ext.input = function(cloudBit, access_token, cb) {
+      console.log('init',cloudBit, access_token)
       var sse = $.SSE('https://api-http.littlebitscloud.cc/v3/devices/'
                         + cloudBit
                         + '/input?access_token='
