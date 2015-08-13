@@ -40,7 +40,7 @@ https://github.com/byjg/jquery-sse
                         + access_token,
         {
         	onError: function(e) {
-        		console.log("Could not connect");
+        		console.log("Could not connect", e);
         	},
           onMessage: function(e) {
             var p = JSON.parse(e.data).percent
