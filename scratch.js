@@ -51,7 +51,7 @@ https://github.com/byjg/jquery-sse
 
     var descriptor = {
         blocks: [
-          ['w', 'set cloudBit %s output value to %n percent for %i ms, with access_token %s',
+          ['w', 'set cloudBit %s output value to %n percent for %n ms, with access_token %s',
             'output',
             'ID', 100, 3000, 'get your access_token from littleBits Cloud Control'],
           ['R', 'get cloudBit %s input value, with access_token %s',
